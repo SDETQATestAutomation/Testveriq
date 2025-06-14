@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AutomationFrameworkSuite" parallel="methods" thread-count="5">
+    
+    <listeners>
+        <listener class-name="com.automation.framework.listeners.AllureTestListener"/>
+        <listener class-name="com.automation.framework.listeners.RetryListener"/>
+        <listener class-name="com.automation.framework.listeners.ScreenshotListener"/>
+    </listeners>
+    
+    <test name="RegressionTests">
+        <classes>
+            <class name="com.automation.tests.ui.LoginTests"/>
+            <class name="com.automation.tests.ui.CheckoutTests"/>
+            <class name="com.automation.tests.ui.RegressionTests"/>
+        </classes>
+    </test>
+    
+    <test name="APITests">
+        <classes>
+            <class name="com.automation.tests.api.UserAPITests"/>
+            <class name="com.automation.tests.api.ProductAPITests"/>
+        </classes>
+    </test>
+    
+</suite> 
